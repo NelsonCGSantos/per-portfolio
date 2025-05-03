@@ -3,6 +3,8 @@ import { Sidebar } from './Sidebar';
 import { ThemeToggle } from './ThemeToggle';
 import PersonaCard from './PersonaCard';
 import Skills from './Skills';
+import ContactGrid from './ContactGrid';
+import Timeline from './Timeline';
 import {
   Header,
   MenuButton,
@@ -11,6 +13,13 @@ import {
   SectionWrapper,
   ProjectsGrid,
 } from './App.styles';
+
+const aboutData = [
+  { period: '2016–2019', content: 'Head eSports Coach for League of Legends teams—building leadership and teamwork.' },
+  { period: '2019–2024', content: 'Operations Manager roles & completed full-stack bootcamp at Lighthouse Labs.' },
+  { period: 'Sept 2024', content: 'Graduated Lighthouse Labs Web Development Bootcamp.' },
+  { period: 'Oct 2024–Present', content: 'Building web apps and Chrome extensions with React & Node.js.' },
+];
 
 
 const skillsData = [
@@ -83,7 +92,7 @@ export default function App({ themeName, setTheme }) {
       <Main sidebarOpen={sidebarOpen}>
         {active === 'About' && (
           <SectionWrapper>
-            📝 <strong>About / History</strong> content goes here.
+            <Timeline events={aboutData} />
           </SectionWrapper>
         )}
 
@@ -108,7 +117,7 @@ export default function App({ themeName, setTheme }) {
 
         {active === 'Contact' && (
           <SectionWrapper>
-            📬 <strong>Contact / Confidant Grid</strong> goes here.
+             <ContactGrid />
           </SectionWrapper>
         )}
       </Main>
