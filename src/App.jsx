@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Sidebar } from './Sidebar';
 import { ThemeToggle } from './ThemeToggle';
 import PersonaCard from './PersonaCard';
+import Skills from './Skills';
 import {
   Header,
   MenuButton,
@@ -11,6 +12,18 @@ import {
   ProjectsGrid,
 } from './App.styles';
 
+
+const skillsData = [
+  { name: 'JavaScript',    level: 100 },
+  { name: 'React',         level:  95 },
+  { name: 'Node.js',       level:  90 },
+  { name: 'TypeScript',    level:  85 },
+  { name: 'HTML & CSS',    level:  90 },
+  { name: 'Git & GitHub',  level:  80 },
+  { name: 'Python',        level:  75 },
+  { name: 'Ruby on Rails', level:  70 },
+  { name: 'PHP',           level:  60 },
+];
 
 const projects = [
   {
@@ -22,25 +35,25 @@ const projects = [
   {
     id: 'jungle',
     title: 'Jungle',
-    description: 'Jungle is a Ruby on Rails 6.1 mini e-commerce application designed to offer users a seamless shopping experience for home plants',
+    description: 'Jungle is a Rails 6.1 mini e‑commerce app for home plants.',
     link: 'https://github.com/NelsonCGSantos/jungle-rails',
   },
   {
-    id: 'Photolabs',
+    id: 'photolabs',
     title: 'Photolabs',
-    description: 'PhotoLabs is a React-based single-page application (SPA) designed to provide users with an interactive photo viewing experience',
+    description: 'React SPA for interactive photo viewing.',
     link: 'https://github.com/NelsonCGSantos/photolabs',
   },
   {
-    id: 'PasswordKeeper',
+    id: 'safepass',
     title: 'SafePass',
-    description: 'Password manager, targeted for company usage, powered by Javascript',
+    description: 'Company-grade password manager in JavaScript.',
     link: 'https://github.com/schang9m/PasswordKeepR',
   },
   {
-    id: 'SpeerNotes',
+    id: 'snotes',
     title: 'SNotes',
-    description: 'A secure, scalable note-taking API with user authentication, CRUD operations, note sharing, and full-text search.',
+    description: 'Secure note‑taking API with auth and search.',
     link: 'https://github.com/NelsonCGSantos/SNotes',
   },
 ];
@@ -89,7 +102,7 @@ export default function App({ themeName, setTheme }) {
 
         {active === 'Skills' && (
           <SectionWrapper>
-            📊 <strong>Skills XP Bars</strong> go here.
+            <Skills skills={skillsData} />
           </SectionWrapper>
         )}
 
