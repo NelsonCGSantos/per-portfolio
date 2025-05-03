@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { themes } from './theme';
+import { BrowserRouter } from 'react-router-dom';
+
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -18,10 +20,12 @@ const GlobalStyle = createGlobalStyle`
 function Root() {
   const [themeName, setThemeName] = useState('p5');
   return (
+    <BrowserRouter>
     <ThemeProvider theme={themes[themeName]}>
       <GlobalStyle />
       <App themeName={themeName} setTheme={setThemeName} />
     </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
