@@ -5,6 +5,8 @@ import PersonaCard from './PersonaCard';
 import Skills from './Skills';
 import ContactGrid from './ContactGrid';
 import Timeline from './Timeline';
+import Background from './Background';
+
 import {
   Header,
   MenuButton,
@@ -74,6 +76,8 @@ export default function App({ themeName, setTheme }) {
 
   return (
     <>
+
+    <Background />
       <Header>
         <MenuButton onClick={() => setSidebarOpen(o => !o)}>☰</MenuButton>
         <Title>Nelson Santos</Title>
