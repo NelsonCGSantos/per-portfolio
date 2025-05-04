@@ -1,34 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
-const Wrapper = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  padding: 1rem;
-`;
-
-const Button = styled.button`
-  padding: 0.5rem 1rem;
-  background: ${({ theme, active }) => (active ? theme.primary : theme.accent)};
-  color: ${({ theme }) => theme.text};
+const ToggleButton = styled.button`
+  background: none;
   border: none;
-  border-radius: 4px;
+  color: ${({ theme }) => theme.text};
   cursor: pointer;
-  opacity: ${({ active }) => (active ? 1 : 0.6)};
+  font-size: 1.5rem;
+  padding: 0.25rem;
 `;
 
 export function ThemeToggle({ themeName, setTheme }) {
+  const isLight = themeName === 'light';
   return (
-    <Wrapper>
-      {['p5', 'p4', 'p3'].map((name) => (
-        <Button
-          key={name}
-          active={themeName === name}
-          onClick={() => setTheme(name)}
-        >
-          {name.toUpperCase()}
-        </Button>
-      ))}
-    </Wrapper>
+    <ToggleButton
+      aria-label={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
+      onClick={() => setTheme(isLight ? 'dark' : 'light')}
+    >
+      {isLight ? <FiMoon /> : <FiSun />}
+    </ToggleButton>
   );
 }

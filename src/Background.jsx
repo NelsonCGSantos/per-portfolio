@@ -8,16 +8,16 @@ const gradientAnim = keyframes`
 
 const Background = styled.div`
   position: fixed;
-  inset: 0; /* top/right/bottom/left = 0 */
+  inset: 0;
   background: linear-gradient(
     45deg,
     ${({ theme }) => theme.primary},
     ${({ theme }) => theme.accent},
-    ${({ theme }) => theme.bg}
+    ${({ theme }) => theme.background}
   );
   background-size: 600% 600%;
   animation: ${gradientAnim} 15s ease infinite;
-  z-index: -1; 
+  z-index: -1;
 `;
 
 export default Background;

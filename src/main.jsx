@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: ${({ theme }) => theme.bg};
+    background: ${({ theme }) => theme.background};
     color:      ${({ theme }) => theme.text};
     font-family: sans-serif;
     transition: background 0.3s, color 0.3s;
@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function Root() {
-  const [themeName, setThemeName] = useState('p5');
+  const [themeName, setThemeName] = useState('light');
   return (
     <BrowserRouter>
     <ThemeProvider theme={themes[themeName]}>

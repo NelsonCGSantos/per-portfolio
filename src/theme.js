@@ -1,25 +1,17 @@
 export const themes = {
- 
-  p5: {
-    primary: '#FF0000',  
-    bg:      '#000000',  
-    accent:  '#8B0000', 
-    text:    '#FFFFFF', 
+  
+  light: {
+    text:       '#0a0002',
+    background: '#fffafb',
+    primary:    '#fd0845',
+    secondary:  '#fedf7c',
+    accent:     '#dafe39',
   },
-
-
-  p4: {
-    primary: '#FFD27F',  
-    bg:      '#0B3D91', 
-    accent:  '#FF7F50',  
-    text:    '#FFFFFF', 
+  dark: {
+    text:       '#fff5f7',
+    background: '#050001',
+    primary:    '#f70240',
+    secondary:  '#836501',
+    accent:     '#a2c601',
   },
-
-
-  p3: {
-    primary: '#005B96',
-    bg:      '#2A2E3E',
-    accent:  '#B75B9B',
-    text:    '#D4DDEF',
-  },
-}
+};
